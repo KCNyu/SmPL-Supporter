@@ -2,7 +2,7 @@
   "name": "smpl",
   "displayName": "SmPL Supporter",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "KCNyu",
   "icon": "./images/smpl-supporter.ico",
   "engines": {
