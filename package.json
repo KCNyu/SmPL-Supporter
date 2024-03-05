@@ -2,7 +2,7 @@
   "name": "smpl",
   "displayName": "SmPL Supporter",
   "description": "Streamlines SMPL coding with syntax highlighting and checks.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "KCNyu",
   "icon": "./images/smpl-supporter.ico",
   "engines": {
