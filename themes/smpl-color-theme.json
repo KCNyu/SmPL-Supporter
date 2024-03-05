@@ -1,0 +1,69 @@
+{
+    "name": "SMPL Color Theme",
+    "type": "vscode",
+    "colors": {},
+    "tokenColors": [
+        {
+            "scope": "keyword.control.smpl",
+            "settings": {
+                "foreground": "#bd00ad"
+            }
+        },
+        {
+            "scope": "keyword.operator.smpl",
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        },
+        {
+            "scope": "constant.language.smpl",
+            "settings": {
+                "foreground": "#4EC9B0"
+            }
+        },
+        {
+            "scope": "constant.numeric.smpl",
+            "settings": {
+                "foreground": "#B5CEA8"
+            }
+        },
+        {
+            "scope": "string.quoted.double.smpl",
+            "settings": {
+                "foreground": "#D69D85"
+            }
+        },
+        {
+            "scope": "comment.line.double-slash.smpl",
+            "settings": {
+                "foreground": "#7b7a7a",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "comment.block.smpl",
+            "settings": {
+                "foreground": "#808080",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope":"markup.inserted.smpl",
+            "settings": {
+                "foreground": "#4EC9B0"
+            }
+        },
+        {
+            "scope":"markup.deleted.smpl",
+            "settings": {
+                "foreground": "#ff0000"
+            }
+        },
+        {
+            "scope":"markup.changed.smpl",
+            "settings": {
+                "foreground": "#569CD6"
+            }
+        }
+    ]
+}

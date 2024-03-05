@@ -1,0 +1,58 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SMPL",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#additions"
+		},
+		{
+			"include": "#deletions"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.smpl",
+					"match": "\\b(if|while|for|return|identifier|expression|type)\\b"
+				}
+			]
+		},
+		"additions": {
+			"patterns": [
+				{
+					"match": "^\\+.*$",
+					"name": "markup.inserted.smpl"
+				}
+			]
+		},
+		"deletions": {
+			"patterns": [
+				{
+					"match": "^\\-.*$",
+					"name": "markup.deleted.smpl"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.smpl",
+					"match": "//.*"
+				},
+				{
+					"name": "comment.block.smpl",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		}
+	},
+	"scopeName": "source.smpl"
+}
