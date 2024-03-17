@@ -6,13 +6,22 @@
 			"include": "#keywords"
 		},
 		{
-			"include": "#additions"
+			"include": "#group"
 		},
 		{
-			"include": "#deletions"
+			"include": "#lineRemoved"
 		},
 		{
-			"include": "#comments"
+			"include": "#lineAdded"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#error"
+		},
+		{
+			"include": "#operator"
 		}
 	],
 	"repository": {
@@ -20,19 +29,25 @@
 			"patterns": [
 				{
 					"name": "keyword.control.smpl",
-					"match": "\\b(if|while|for|return|identifier|expression|type)\\b"
+					"match": "\\b(identifier|type|parameter|constant|expression|statement|function|local|list|fresh|position|idexpression|declaration|declarer|attribute|symbol|format|assignment|operator|global|field|initializer|initialiser|iterator|name)\\b"
 				}
 			]
 		},
-		"additions": {
+		"group": {
 			"patterns": [
 				{
-					"match": "^\\+.*$",
-					"name": "markup.inserted.smpl"
+					"begin": "@[^@]*@",
+					"end": "@@",
+					"name": "markup.other.smpl.group",
+					"patterns": [
+						{
+							"include": "#keywords"
+						}
+					]
 				}
 			]
 		},
-		"deletions": {
+		"lineRemoved": {
 			"patterns": [
 				{
 					"match": "^\\-.*$",
@@ -40,16 +55,35 @@
 				}
 			]
 		},
-		"comments": {
+		"lineAdded": {
+			"patterns": [
+				{
+					"match": "^\\+.*$",
+					"name": "markup.inserted.smpl"
+				}
+			]
+		},
+		"comment": {
 			"patterns": [
 				{
 					"name": "comment.line.double-slash.smpl",
 					"match": "//.*"
-				},
+				}
+			]
+		},
+		"error": {
+			"patterns": [
 				{
-					"name": "comment.block.smpl",
-					"begin": "/\\*",
-					"end": "\\*/"
+					"match": "^[ \\t][\\+-].*",
+					"name": "invalid.illegal.smpl"
+				}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"name": "keyword.operator.smpl",
+					"match": "\\b(\\.\\.\\.|when|any)\\b"
 				}
 			]
 		}

@@ -1,68 +1,82 @@
 {
-    "name": "SMPL Color Theme",
+    "name": "SMPL Color Theme for One Dark Pro",
     "type": "vscode",
     "colors": {},
     "tokenColors": [
         {
             "scope": "keyword.control.smpl",
             "settings": {
-                "foreground": "#bd00ad"
+                "foreground": "#C678DD" // Vibrant purple for keywords, typical for One Dark Pro
+            }
+        },
+        {
+            "scope": "markup.other.smpl.group",
+            "settings": {
+                "foreground": "#E5C07B", // Soft yellow for groups
+                "fontStyle": "bold"
             }
         },
         {
             "scope": "keyword.operator.smpl",
             "settings": {
-                "foreground": "#569CD6"
+                "foreground": "#56B6C2" // Cyan for operators
             }
         },
         {
             "scope": "constant.language.smpl",
             "settings": {
-                "foreground": "#4EC9B0"
+                "foreground": "#56B6C2" // Cyan for constants, aligning with One Dark Pro's style
             }
         },
         {
             "scope": "constant.numeric.smpl",
             "settings": {
-                "foreground": "#B5CEA8"
+                "foreground": "#D19A66" // Soft orange for numeric constants
             }
         },
         {
             "scope": "string.quoted.double.smpl",
             "settings": {
-                "foreground": "#D69D85"
+                "foreground": "#98C379" // Green for strings
             }
         },
         {
             "scope": "comment.line.double-slash.smpl",
             "settings": {
-                "foreground": "#7b7a7a",
+                "foreground": "#5C6370", // Grey for comments
                 "fontStyle": "italic"
             }
         },
         {
             "scope": "comment.block.smpl",
             "settings": {
-                "foreground": "#808080",
+                "foreground": "#5C6370", // Consistent grey for block comments
                 "fontStyle": "italic"
             }
         },
         {
             "scope":"markup.inserted.smpl",
             "settings": {
-                "foreground": "#4EC9B0"
+                "foreground": "#98C379" // Green for inserted lines, matching string colors
             }
         },
         {
             "scope":"markup.deleted.smpl",
             "settings": {
-                "foreground": "#ff0000"
+                "foreground": "#E06C75" // Red for deleted lines
+            }
+        },
+        {
+            "scope":"invalid.illegal.smpl",
+            "settings": {
+                "foreground": "#E06C75", // Bright red for errors, ensuring they stand out
+                "background": "#2C313A" // Slightly lighter dark background for contrast
             }
         },
         {
             "scope":"markup.changed.smpl",
             "settings": {
-                "foreground": "#569CD6"
+                "foreground": "#E5C07B" // Yellow for changed lines
             }
         }
     ]

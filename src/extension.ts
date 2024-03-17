@@ -58,14 +58,11 @@ function checkGrammar(document: vscode.TextDocument, diagnostics: vscode.Diagnos
 				severity = vscode.DiagnosticSeverity.Warning;
 			} else if (line.startsWith('error:')) {
 				severity = vscode.DiagnosticSeverity.Error;
+			} else if (line.includes("PARSING")) {
+				severity = vscode.DiagnosticSeverity.Information;
 			}
 
-			if (severity !== undefined && severity != vscode.DiagnosticSeverity.Error) {
-				// if line contains "PARSING: type defaults to "
-				if (line.includes("PARSING")) {
-					severity = vscode.DiagnosticSeverity.Information;
-					// return;
-				}
+			if (severity !== undefined && severity == vscode.DiagnosticSeverity.Warning) {
 				const diagnostic = new vscode.Diagnostic(
 					new vscode.Range(index, 0, index, line.length),
 					line,
