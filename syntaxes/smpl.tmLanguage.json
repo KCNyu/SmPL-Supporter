@@ -22,6 +22,18 @@
 		},
 		{
 			"include": "#operator"
+		},
+		{
+			"include": "#directive"
+		},
+		{
+			"include": "#metavariable"
+		},
+		{
+			"include": "#transformational_operator"
+		},
+		{
+			"include": "#annotation"
 		}
 	],
 	"repository": {
@@ -38,7 +50,7 @@
 				{
 					"begin": "@[^@]*@",
 					"end": "@@",
-					"name": "markup.other.smpl.group",
+					"name": "entity.other.attribute-name.smpl.group",
 					"patterns": [
 						{
 							"include": "#keywords"
@@ -68,6 +80,11 @@
 				{
 					"name": "comment.line.double-slash.smpl",
 					"match": "//.*"
+				},
+				{
+					"begin": "/\\*",
+					"end": "\\*/",
+					"name": "comment.block.smpl"
 				}
 			]
 		},
@@ -86,7 +103,93 @@
 					"match": "\\b(\\.\\.\\.|when|any)\\b"
 				}
 			]
+		},
+		"directive": {
+			"patterns": [
+				{
+					"match": "@@.*@@",
+					"name": "keyword.other.directive.smpl"
+				}
+			]
+		},
+		"metavariable": {
+			"patterns": [
+				{
+					"match": "<\\+.*?\\+>",
+					"name": "variable.parameter.metavariable.smpl"
+				}
+			]
+		},
+		"transformational_operator": {
+			"patterns": [
+				{
+					"match": "\\-\\|\\|\\+",
+					"name": "keyword.operator.transformational.smpl"
+				}
+			]
+		},
+		"annotation": {
+			"patterns": [
+				{
+					"match": "//.*",
+					"name": "comment.line.annotation.smpl"
+				}
+			]
 		}
 	},
-	"scopeName": "source.smpl"
+	"scopeName": "source.smpl",
+	"settings": [
+		{
+			"scope": [
+				"keyword.control.smpl",
+				"keyword.operator.smpl",
+				"keyword.other.directive.smpl",
+				"keyword.operator.transformational.smpl"
+			],
+			"settings": {
+				"foreground": "#C678DD",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"scope": [
+				"markup.other.smpl.group",
+				"variable.parameter.metavariable.smpl"
+			],
+			"settings": {
+				"foreground": "#56B6C2"
+			}
+		},
+		{
+			"scope": [
+				"markup.deleted.smpl",
+				"invalid.illegal.smpl"
+			],
+			"settings": {
+				"foreground": "#E06C75"
+			}
+		},
+		{
+			"scope": "markup.inserted.smpl",
+			"settings": {
+				"foreground": "#98C379"
+			}
+		},
+		{
+			"scope": [
+				"comment.line.double-slash.smpl",
+				"comment.block.smpl",
+				"comment.line.annotation.smpl"
+			],
+			"settings": {
+				"foreground": "#5C6370"
+			}
+		},
+		{
+			"scope": "entity.other.attribute-name.smpl.group",
+			"settings": {
+				"foreground": "#D19A66"
+			}
+		}
+	]
 }

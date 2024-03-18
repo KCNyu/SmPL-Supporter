@@ -54,12 +54,13 @@ function checkGrammar(document: vscode.TextDocument, diagnostics: vscode.Diagnos
 		const lines = stderr.split('\n');
 		lines.forEach((line, index) => {
 			let severity;
-			if (line.startsWith('Warning') || line.startsWith('warning')) {
+			if (line.includes("PARSING")) {
+				severity = vscode.DiagnosticSeverity.Information;
+			}
+			else if (line.startsWith('Warning') || line.startsWith('warning')) {
 				severity = vscode.DiagnosticSeverity.Warning;
 			} else if (line.startsWith('error:')) {
 				severity = vscode.DiagnosticSeverity.Error;
-			} else if (line.includes("PARSING")) {
-				severity = vscode.DiagnosticSeverity.Information;
 			}
 
 			if (severity !== undefined && severity == vscode.DiagnosticSeverity.Warning) {

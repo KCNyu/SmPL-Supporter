@@ -44,13 +44,6 @@
         "scopeName": "source.smpl",
         "path": "./syntaxes/smpl.tmLanguage.json"
       }
-    ],
-    "themes": [
-      {
-        "uiTheme": "vs",
-        "label": "SMPL Color Theme",
-        "path": "./themes/smpl-color-theme.json"
-      }
     ]
   },
   "scripts": {
